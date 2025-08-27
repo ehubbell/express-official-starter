@@ -3,7 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "nodemon",
+    "migrate": "knex migrate:latest",
+    "migrate:rollback": "knex migrate:rollback",
+    "seed": "knex seed:run"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -11,6 +16,20 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "knex": "^3.1.0",
+    "morgan": "~1.9.1",
+    "objection": "^3.1.5",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.9",
+    "@types/debug": "^4.1.12",
+    "@types/express": "^5.0.3",
+    "@types/http-errors": "^2.0.5",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^24.3.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
   }
 }
